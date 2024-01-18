@@ -1,0 +1,82 @@
+<header>
+  <nav class="left">
+    <a href="#"> <img src="/public/svg/logo.svg" class="logo" alt="Logo de Tomas Vilalta" /></a>
+  </nav>
+
+  <nav class="mid">
+    <a href="/"> <span class="material-symbols-rounded"> home</span></a>
+    <a href="#sobre-mi">Sobre mi</a>
+    <a href="#experiencia">Experiencia</a>
+    <a href="#proyectos">Proyectos</a>
+  </nav>
+
+  <nav class="right">
+    <a href="#contacto"> Contáctame</a>
+  </nav>
+</header>
+
+<style>
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    margin-top: 16px;
+  }
+
+  header nav {
+    display: flex;
+    align-items: center;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .left {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+
+  .left img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .mid {
+    padding: 4px 4px;
+    background-color: #1c1c1c;
+    border-radius: 2em;
+    border: 1px solid #ffedb7;
+  }
+
+  .mid a:first-child {
+  }
+
+  .mid a {
+    display: flex;
+    align-items: center;
+    padding: 4px 16px;
+    width: fit-content;
+    border-radius: 2em;
+    height: 100%;
+  }
+
+  .right {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    flex-basis: 0;
+  }
+
+  .right a {
+    padding: 10px 22px;
+    width: fit-content;
+    color: black;
+    background: linear-gradient(90deg, #ffb672 0%, #e3ff68 100%);
+    border-radius: 100px;
+    border: 1px solid #e9e9e9;
+    font-weight: 500;
+  }
+</style>
