@@ -2,11 +2,33 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Background from "../components/Background.astro";
 ---
 
 <Layout
   title="Tomás Vilalta | Estudiante de Ingenieria en Sistemas y desarrollador"
   description="Tomás Vilalta es un desarrollador front-end y estudiante avanzado de Ingeniería en Sistemas  "
 >
-  <Header />
+  <div class="background">
+    <Background />
+  </div>
+  <div class="content">
+    <Header style="position:relative;z-index:2" />
+    <Hero />
+  </div>
 </Layout>
+
+<style>
+  .background {
+    position: absolute;
+    z-index: 1;
+    right: 8px;
+    top: 0;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+  }
+</style>

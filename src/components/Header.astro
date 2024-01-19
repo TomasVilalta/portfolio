@@ -1,4 +1,8 @@
-<header>
+---
+const { style } = Astro.props;
+---
+
+<header style={style}>
   <nav class="left">
     <a href="#"> <img src="/public/svg/logo.svg" class="logo" alt="Logo de Tomas Vilalta" /></a>
   </nav>
@@ -19,8 +23,7 @@
   header {
     display: flex;
     justify-content: space-between;
-    padding: 8px;
-    margin-top: 16px;
+    margin-top: 40px;
   }
 
   header nav {
@@ -40,8 +43,9 @@
   }
 
   .left img {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
+    display: block;
   }
 
   .mid {
@@ -49,9 +53,7 @@
     background-color: #1c1c1c;
     border-radius: 2em;
     border: 1px solid #ffedb7;
-  }
-
-  .mid a:first-child {
+    line-height: 1px;
   }
 
   .mid a {
@@ -61,6 +63,10 @@
     width: fit-content;
     border-radius: 2em;
     height: 100%;
+  }
+
+  .mid a span {
+    font-size: 1.25rem;
   }
 
   .right {
@@ -73,10 +79,9 @@
   .right a {
     padding: 10px 22px;
     width: fit-content;
-    color: black;
+    color: rgb(0, 0, 0);
     background: linear-gradient(90deg, #ffb672 0%, #e3ff68 100%);
     border-radius: 100px;
-    border: 1px solid #e9e9e9;
     font-weight: 500;
   }
 </style>
