@@ -1,4 +1,6 @@
 ---
+import "@fontsource/poppins";
+
 interface Props {
   title: string;
   description: string;
@@ -26,8 +28,14 @@ const { title, description } = Astro.props;
   </body>
 </html>
 <style is:global>
+  @font-face {
+    font-family: "Nexa";
+    src: url("/public/fonts/NEXA-HEAVY.TTF") format("ttf");
+  }
+
   html {
-    font-family: system-ui, sans-serif;
+    font-family: "Poppins", system-ui, sans-serif;
+    font-size: 62.5%;
     background: #1b1b1b;
     color: white;
   }

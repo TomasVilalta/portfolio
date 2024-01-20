@@ -36,13 +36,13 @@ const { style } = Astro.props;
   }
 
   .container div:hover {
-    background: #ff993a;
     transform: scale(1.03);
   }
 
   .container div:nth-child(1),
   .container div:nth-child(2),
-  .container div:nth-child(8) {
+  .container div:nth-child(8),
+  .container div:last-child {
     background: transparent;
   }
 
@@ -82,20 +82,40 @@ const { style } = Astro.props;
 <script>
   let container = document.querySelector(".container");
   let divs = document.querySelectorAll(".container div") as NodeListOf<HTMLElement>;
+  let randomColor;
+  // let isClicked = false;
 
   const colors = ["#ff993a", "#93EE1F", "#1FEE93", "#1F93EE"];
 
   divs.forEach((div) => {
-    div.addEventListener("click", () => {
-      console.log(div.style.background);
-      if (div.style.background == "transparent") {
+    div.addEventListener("mouseenter", () => {
+      let bgColor = window.getComputedStyle(div).backgroundColor;
+      console.log(bgColor);
+      if (is_transparent(bgColor)) {
         return;
       }
-      if (div.style.background != "rgb(33, 33, 33)") {
-        div.style.background = "#212121";
-      } else {
-        div.style.background = "#ff993a";
+      randomColor = colors[Math.floor(Math.random() * colors.length)];
+      console.log("aaa");
+      div.style.background = randomColor;
+
+      //listen for clicks on the new hover color
+      // div.addEventListener("click", () => {
+      //   isClicked = !isClicked;
+      // });
+    });
+
+    div.addEventListener("mouseleave", () => {
+      let bgColor = window.getComputedStyle(div).backgroundColor;
+      console.log(bgColor);
+      if (is_transparent(bgColor)) {
+        return;
       }
+      div.style.background = "rgb(33, 33, 33)";
     });
   });
+
+  // Ignore transparent hexagons to keep the pattern
+  function is_transparent(color: string) {
+    return color === "transparent" || color === "rgba(0, 0, 0, 0)" || color === "hsla(0, 0%, 0%, 0)";
+  }
 </script>
