@@ -9,9 +9,9 @@ const { style } = Astro.props;
 
   <nav class="mid">
     <a href="/"> <span class="material-symbols-rounded"> home</span></a>
-    <a href="#sobre-mi">Sobre mi</a>
-    <a href="#experiencia">Experiencia</a>
-    <a href="#proyectos">Proyectos</a>
+    <a href="#sobre-mi">About me</a>
+    <a href="#experiencia">Experience</a>
+    <a href="#proyectos">Projects</a>
   </nav>
 
   <nav class="right">
@@ -23,6 +23,7 @@ const { style } = Astro.props;
   header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-top: 40px;
   }
 
@@ -45,15 +46,15 @@ const { style } = Astro.props;
   .left img {
     width: 44px;
     height: 44px;
-    display: block;
   }
 
   .mid {
-    padding: 4px 4px;
+    padding: 4px 16px;
     background-color: #1c1c1c;
     border-radius: 2em;
     border: 1px solid #ffedb7;
     line-height: 1px;
+    max-height: 36px;
   }
 
   .mid a {
@@ -63,10 +64,11 @@ const { style } = Astro.props;
     width: fit-content;
     border-radius: 2em;
     height: 100%;
+    font-size: 1.25rem;
   }
 
   .mid a span {
-    font-size: 1.25rem;
+    font-size: 1.6rem;
   }
 
   .right {
@@ -82,6 +84,6 @@ const { style } = Astro.props;
     color: rgb(0, 0, 0);
     background: linear-gradient(90deg, #ffb672 0%, #e3ff68 100%);
     border-radius: 100px;
-    font-weight: 500;
+    font-weight: 600;
   }
 </style>
