@@ -25,24 +25,24 @@ const { style } = Astro.props;
   .main {
     display: flex;
     --s: 200px; /* size  */
-    --m: 4px; /* margin */
+    --m: 6px; /* margin */
     --f: calc(1.732 * var(--s) + 4 * var(--m) - 1px);
     justify-content: flex-end;
   }
 
   .container {
     font-size: 0; /*disable white space between inline block element */
-    max-width: 832px;
+    max-width: 850px;
   }
 
   .container div:hover {
     transform: scale(1.03);
+    transition: all 0.1s ease-in-out;
   }
 
   .container div:nth-child(1),
   .container div:nth-child(2),
-  .container div:nth-child(8),
-  .container div:last-child {
+  .container div:nth-child(8) {
     background: transparent;
   }
 
@@ -55,7 +55,7 @@ const { style } = Astro.props;
     clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
     background: rgb(33, 33, 33);
     margin-bottom: calc(var(--m) - var(--s) * 0.2885);
-    transition: all 0.3s ease-in-out;
+    transition: all 1s ease-in-out;
     position: relative;
   }
 

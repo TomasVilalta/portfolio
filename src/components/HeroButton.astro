@@ -1,0 +1,62 @@
+---
+interface Props {
+  href: string;
+  text: string;
+}
+
+const { href, text } = Astro.props;
+---
+
+<a href={href}>{text}</a>
+
+<style>
+  a {
+    position: relative;
+    text-decoration: none;
+    color: #ff993a;
+    font-size: 1.5rem;
+    border: 1px solid #ff993a;
+    padding: 12px 24px;
+    transition: all 0.3s ease-in-out;
+    pointer-events: initial;
+  }
+
+  a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #ff993a;
+    transition: all 0.3s ease-in-out;
+    z-index: -1;
+  }
+
+  a:hover {
+    color: #101010;
+  }
+
+  a:hover::before {
+    width: 100%;
+  }
+
+  .aa {
+    color: red;
+    position:relative &:before {
+      content: "";
+      @include absolute(0, -50px, 0, 0);
+      border-right: 50px solid transparent;
+      border-bottom: $btn-height solid $btn-color-dark;
+      transform: translateX(-100%);
+    }
+
+    &:hover {
+      color: tint($btn-color, 75%);
+
+      &:before {
+        transform: translateX(0);
+      }
+    }
+  }
+</style>

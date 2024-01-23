@@ -23,8 +23,8 @@ import Background from "../components/Background.astro";
   .background {
     position: absolute;
     z-index: 1;
-    right: 8px;
-    top: 0;
+    right: -150px;
+    top: -80px;
   }
   .content {
     position: relative;
@@ -32,7 +32,7 @@ import Background from "../components/Background.astro";
     pointer-events: none;
   }
 
-  .content > * {
+  .content * {
     pointer-events: auto;
   }
 </style>
