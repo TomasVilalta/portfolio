@@ -35,11 +35,11 @@ const { href, icon } = Astro.props;
     transition: all 0.1s ease-in-out;
   }
 
-  /* .icon:hover {
+  a:hover .icon {
     fill: #1b1b1b;
-  } */
+  }
 
-  /* a::before {
+  a::before {
     --s: 32px;
     content: "";
     width: var(--s);
@@ -51,13 +51,14 @@ const { href, icon } = Astro.props;
     z-index: -1;
     transform: scale(0);
     transition: all 0.2s ease-in-out;
+    pointer-events: none;
   }
 
   a:hover::before {
     transform: scale(1);
     rotate: 180deg;
     pointer-events: none;
-  } */
+  }
 
   .tooltip {
     position: absolute;

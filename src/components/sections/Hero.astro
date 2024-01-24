@@ -15,7 +15,7 @@ import Home from "../icons/Home.astro";
   </p>
 
   <span class="buttons">
-    <HeroButton href="#experience" text="See my work" />
+    <HeroButton class="hero-btn" href="#experience" text="See my work" />
     <SocialIcon href="" icon="Resume" />
     <SocialIcon href="" icon="GitHub" />
     <SocialIcon href="" icon="LinkedIn" />
@@ -25,6 +25,10 @@ import Home from "../icons/Home.astro";
 </section>
 
 <style>
+  .hero-btn {
+    margin-right: 20px;
+  }
+
   .down-arrow {
     fill: white;
     width: 40px;
@@ -81,7 +85,7 @@ import Home from "../icons/Home.astro";
     animation-delay: 0.15s;
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 20px;
   }
 
   .buttons {

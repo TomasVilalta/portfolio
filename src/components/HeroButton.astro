@@ -2,12 +2,15 @@
 interface Props {
   href: string;
   text: string;
+  class?: string;
 }
 
 const { href, text } = Astro.props;
+const { class: className, ...rest } = Astro.props;
+console.log(className);
 ---
 
-<a href={href}>{text}</a>
+<a class={className} {...rest} href={href}>{text}</a>
 
 <style>
   a {
@@ -19,6 +22,7 @@ const { href, text } = Astro.props;
     padding: 12px 24px;
     transition: all 0.3s ease-in-out;
     pointer-events: initial;
+    letter-spacing: 0.1rem;
   }
 
   a::before {
