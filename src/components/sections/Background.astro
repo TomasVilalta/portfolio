@@ -43,10 +43,12 @@ const { style } = Astro.props;
   .container div:nth-child(1),
   .container div:nth-child(2),
   .container div:nth-child(8) {
+    animation: none;
     background: transparent;
   }
 
   .container div {
+    animation: glow 0.5s ease-in;
     width: var(--s);
     margin: var(--m);
     height: calc(var(--s) * 1.1547);
@@ -77,6 +79,42 @@ const { style } = Astro.props;
     transition: background 0.3s ease-in-out;
     z-index: 30;
   } */
+
+  @keyframes glow {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.03);
+    }
+    100% {
+      transform: initial;
+    }
+  }
+
+  .container div:nth-child(5),
+  .container div:nth-child(9),
+  .container div:nth-child(12) {
+    animation-delay: 0.1s;
+  }
+
+  .container div:nth-child(2),
+  .container div:nth-child(6),
+  .container div:nth-child(10),
+  .container div:nth-child(13) {
+    animation-delay: 0.2s;
+  }
+
+  .container div:nth-child(3),
+  .container div:nth-child(7),
+  .container div:nth-child(11),
+  .container div:nth-child(14) {
+    animation-delay: 0.3s;
+  }
+
+  .container div:nth-child(4) {
+    animation-delay: 0.4s;
+  }
 </style>
 
 <script>
@@ -90,7 +128,6 @@ const { style } = Astro.props;
   divs.forEach((div) => {
     div.addEventListener("mouseenter", () => {
       let bgColor = window.getComputedStyle(div).backgroundColor;
-      console.log(bgColor);
       if (is_transparent(bgColor)) {
         return;
       }
@@ -106,7 +143,6 @@ const { style } = Astro.props;
 
     div.addEventListener("mouseleave", () => {
       let bgColor = window.getComputedStyle(div).backgroundColor;
-      console.log(bgColor);
       if (is_transparent(bgColor)) {
         return;
       }
