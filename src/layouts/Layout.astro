@@ -19,10 +19,6 @@ const { title, description } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,300,0,0"
-    />
     <link rel="icon" type="image/svg+xml" href="/public/svg/logo.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
@@ -34,11 +30,20 @@ const { title, description } = Astro.props;
 <style is:global>
   @font-face {
     font-family: "Nexa";
-    src: url("/public/fonts/NEXA-HEAVY.TTF") format("ttf");
+    src: url("/public/fonts/NEXA-HEAVY.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "Adjusted Verdana Fallback";
+    src: local(Verdana);
+    size-adjust: 96%;
+    ascent-override: 111%;
+    descent-override: 39%;
+    line-gap-override: 5%;
   }
 
   html {
-    font-family: "Poppins", system-ui, sans-serif;
+    font-family: "Poppins", "Adjusted Verdana Fallback", system-ui, sans-serif;
     font-size: 62.5%;
     background: #1b1b1b;
     color: white;
@@ -125,5 +130,29 @@ const { title, description } = Astro.props;
   #root,
   #__next {
     isolation: isolate;
+  }
+
+  /* ANIMATIONS */
+
+  @keyframes slideInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-25%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes dropDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-25%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 </style>

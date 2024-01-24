@@ -4,6 +4,7 @@ import HeroButton from "../HeroButton.astro";
 import SocialIcon from "../icons/SocialIcon.astro";
 import FileDownload from "../icons/FileDownload.astro";
 import DownArrow from "../icons/DownArrow.astro";
+import Home from "../icons/Home.astro";
 ---
 
 <section>
@@ -40,11 +41,13 @@ import DownArrow from "../icons/DownArrow.astro";
   }
 
   h1 {
+    animation: slideInLeft 0.3s ease-in-out;
+    animation-delay: 0.05s;
     font-size: 50px;
     width: fit-content;
     max-width: 14ch;
     text-wrap: balance;
-    font-family: "Nexa", sans-serif, system-ui;
+    font-family: "Nexa", system-ui, sans-serif;
     line-height: 130%;
     pointer-events: initial;
   }
@@ -56,6 +59,9 @@ import DownArrow from "../icons/DownArrow.astro";
   }
 
   p {
+    animation: slideInLeft 0.3s ease-in-out;
+    animation-delay: 0.1s;
+
     font-size: 1.8rem;
     width: fit-content;
     text-wrap: pretty;
@@ -71,10 +77,15 @@ import DownArrow from "../icons/DownArrow.astro";
   }
 
   .buttons {
+    animation: slideInLeft 0.3s ease-in-out;
+    animation-delay: 0.15s;
     margin: 32px 0px;
     display: flex;
     align-items: center;
     gap: 24px;
+  }
+
+  .buttons {
   }
 
   @media (max-width: 768px) {

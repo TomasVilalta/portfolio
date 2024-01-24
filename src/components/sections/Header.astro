@@ -1,4 +1,6 @@
 ---
+import Home from "../icons/Home.astro";
+
 const { style } = Astro.props;
 ---
 
@@ -8,7 +10,7 @@ const { style } = Astro.props;
   </nav>
 
   <nav class="mid">
-    <a href="/"> <span class="material-symbols-rounded"> home</span></a>
+    <a href="/"> <Home class="home" /></a>
     <a href="#sobre-mi">About me</a>
     <a href="#experiencia">Experience</a>
     <a href="#proyectos">Projects</a>
@@ -21,6 +23,7 @@ const { style } = Astro.props;
 
 <style>
   header {
+    animation: dropDown 0.5s ease-in-out;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -50,8 +53,14 @@ const { style } = Astro.props;
     height: 40px;
   }
 
+  .mid .home {
+    fill: white;
+    width: 18px;
+    height: 18px;
+  }
+
   .mid {
-    padding: 4px 16px;
+    padding: 8px 16px;
     line-height: 1px;
     max-height: 36px;
     position: relative;
