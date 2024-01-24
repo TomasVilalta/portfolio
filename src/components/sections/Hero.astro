@@ -3,6 +3,7 @@ import Background from "./Background.astro";
 import HeroButton from "../HeroButton.astro";
 import SocialIcon from "../icons/SocialIcon.astro";
 import FileDownload from "../icons/FileDownload.astro";
+import DownArrow from "../icons/DownArrow.astro";
 ---
 
 <section>
@@ -12,15 +13,24 @@ import FileDownload from "../icons/FileDownload.astro";
     incredible digital experiences together!
   </p>
 
-  <div class="buttons">
+  <span class="buttons">
     <HeroButton href="#experience" text="See my work" />
     <SocialIcon href="" icon="Resume" />
     <SocialIcon href="" icon="GitHub" />
     <SocialIcon href="" icon="LinkedIn" />
-  </div>
+  </span>
+
+  <DownArrow class="down-arrow" />
 </section>
 
 <style>
+  .down-arrow {
+    fill: white;
+    width: 40px;
+    height: 40px;
+    align-self: center;
+    margin-top: 100px;
+  }
   section {
     display: flex;
     flex-direction: column;
@@ -64,7 +74,7 @@ import FileDownload from "../icons/FileDownload.astro";
     margin: 32px 0px;
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 24px;
   }
 
   @media (max-width: 768px) {
