@@ -1,0 +1,79 @@
+---
+import FileDownload from "./FileDownload.astro";
+import GitHub from "./GitHub.astro";
+import LinkedIn from "./LinkedIn.astro";
+
+interface Props {
+  href: string;
+  icon: string;
+}
+
+const { href, icon } = Astro.props;
+---
+
+<a href={href}>
+  <span class="tooltip"> {icon}</span>
+  {icon == "Resume" && <FileDownload class="icon" />}
+  {icon == "GitHub" && <GitHub class="icon" />}
+  {icon == "LinkedIn" && <LinkedIn class="icon" />}
+</a>
+
+<style>
+  a {
+    pointer-events: initial;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon {
+    fill: white;
+    width: 24px;
+    height: 24px;
+    transition: all 0.1s ease-in-out;
+  }
+
+  /* .icon:hover {
+    fill: #1b1b1b;
+  } */
+
+  /* a::before {
+    --s: 32px;
+    content: "";
+    width: var(--s);
+    height: calc(var(--s) * 1.1547);
+    background-color: white;
+    position: absolute;
+    clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+    top: calc(50% - (var(--s) * 1.1547) / 2);
+    z-index: -1;
+    transform: scale(0);
+    transition: all 0.2s ease-in-out;
+  }
+
+  a:hover::before {
+    transform: scale(1);
+    rotate: 180deg;
+    pointer-events: none;
+  } */
+
+  .tooltip {
+    position: absolute;
+    color: transparent;
+    width: max-content;
+    background-color: transparent;
+    padding: 4px 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    pointer-events: none;
+    border-radius: 1rem;
+    transition: all 0.1s ease-in-out;
+  }
+
+  a:hover .tooltip {
+    transform: translateY(-32px);
+    color: #101110;
+    background-color: white;
+  }
+</style>
